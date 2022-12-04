@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'ItemCard.dart';
 import 'add_more_btn.dart';
+import 'total_calculate_dialog.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -54,127 +55,10 @@ class Body extends StatelessWidget {
             deliveryfreeText: 'Delivery Free',
             totalText: 'Total',
             deliveryfreePrice: 20.30,
-            totalPrice: 76.70,
             subtotalPrice: 97.0,
           ),
         ),
       ],
-    );
-  }
-}
-
-class TotalCalculataDialog extends StatelessWidget {
-  final String subtotalText, deliveryfreeText, totalText;
-  final double subtotalPrice, deliveryfreePrice, totalPrice;
-
-  const TotalCalculataDialog({
-    Key? key,
-    required this.subtotalText,
-    required this.deliveryfreeText,
-    required this.totalText,
-    required this.deliveryfreePrice,
-    required this.totalPrice,
-    required this.subtotalPrice,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      height: size.height / 4,
-      width: size.width,
-      color: Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.only(
-          top: 10.0,
-          right: 10.0,
-          left: 10.0,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Divider(
-              thickness: 2,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  subtotalText,
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: Colors.black87,
-                      ),
-                ),
-                Text(
-                  '\$$subtotalPrice',
-                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                        color: Colors.black87,
-                      ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  deliveryfreeText,
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: Colors.black87,
-                      ),
-                ),
-                Text(
-                  '\$$deliveryfreePrice',
-                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                        color: Colors.black87,
-                      ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              height: 50,
-              color: Colors.grey,
-              child: Container(
-                margin: const EdgeInsets.only(
-                    bottom: 0, top: 05, right: 05, left: 05),
-                height: 50,
-                color: Colors.black,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        totalText,
-                        style: Theme.of(context).textTheme.headline6!.copyWith(
-                              color: Colors.white,
-                            ),
-                      ),
-                      Text(
-                        '\$$totalPrice',
-                        style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                              color: Colors.white,
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
