@@ -22,6 +22,7 @@ class _TotalCalculataDialogState extends State<TotalCalculataDialog> {
 
   @override
   void initState() {
+    super.initState();
     setState(() {
       totalPrice = widget.subtotalPrice - widget.deliveryfreePrice;
     });
